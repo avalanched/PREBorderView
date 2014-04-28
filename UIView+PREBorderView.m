@@ -50,7 +50,7 @@ static UIColor* _defaultBorderColor;
     [self addLineWithColor:self.defaultBorderColor andWidth:pixelWidth atPosistion:position];
 }
 
-- (void)addLineWithColor:(UIColor*)color andWidth:(float)pixelWidth atPosistion:(enum PREBorderPosition)position {
+- (CALayer *)addLineWithColor:(UIColor*)color andWidth:(float)pixelWidth atPosistion:(enum PREBorderPosition)position {
     
     if (!([UIScreen mainScreen].scale == 2) && pixelWidth<1) {
         pixelWidth = 1;
@@ -77,6 +77,8 @@ static UIColor* _defaultBorderColor;
     
     border.backgroundColor = color.CGColor;
     [self.layer addSublayer:border];
+    
+    return border;
 }
 
 @end
