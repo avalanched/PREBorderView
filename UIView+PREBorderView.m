@@ -38,16 +38,16 @@ static UIColor* _defaultBorderColor;
     self.layer.borderColor = color.CGColor;
 }
 
-- (void)addOneRetinaPixelLineAtPosistion:(enum PREBorderPosition)position {
-    [self addOneRetinaPixelLineWithColor:self.defaultBorderColor atPosistion:position];
+- (CALayer *)addOneRetinaPixelLineAtPosistion:(enum PREBorderPosition)position {
+    return [self addOneRetinaPixelLineWithColor:self.defaultBorderColor atPosistion:position];
 }
 
-- (void)addOneRetinaPixelLineWithColor:(UIColor*)color atPosistion:(enum PREBorderPosition)position {
-    [self addLineWithColor:color andWidth:0.5 atPosistion:position];
+- (CALayer *)addOneRetinaPixelLineWithColor:(UIColor*)color atPosistion:(enum PREBorderPosition)position {
+    return [self addLineWithColor:color andWidth:0.5 atPosistion:position];
 }
 
-- (void)addLineWithWidth:(float)pixelWidth atPosistion:(enum PREBorderPosition)position {
-    [self addLineWithColor:self.defaultBorderColor andWidth:pixelWidth atPosistion:position];
+- (CALayer *)addLineWithWidth:(float)pixelWidth atPosistion:(enum PREBorderPosition)position {
+    return [self addLineWithColor:self.defaultBorderColor andWidth:pixelWidth atPosistion:position];
 }
 
 - (CALayer *)addLineWithColor:(UIColor*)color andWidth:(float)pixelWidth atPosistion:(enum PREBorderPosition)position {
